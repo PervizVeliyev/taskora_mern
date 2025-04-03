@@ -55,40 +55,62 @@ const Add = () => {
   }
 
   const handleImageUploads = async () => {
+    if (!coverImage || gigImages.length === 0) {
+      toast.error('Please select images before uploading!');
+      return;
+    }
+  
     try {
       setUploading(true);
       const cover = await generateImageURL(coverImage);
       const images = await Promise.all(
-        [...gigImages].map(async (img) => await generateImageURL(img))
-      )
+        [...gigImages].map(img => generateImageURL(img))
+      );
+  
+      console.log("Cover URL:", cover);
+      console.log("Images URLs:", images);
+  
       dispatch({
         type: 'ADD_IMAGES',
-        payload: { cover: cover.url, images: images.map((img) => img.url) }
-      })
-      setUploading(false);
+        payload: { cover, images } // URLs correctly passed now
+      });
+  
+      toast.success('Images uploaded successfully!');
       setDisabled(true);
-    }
-    catch (error) {
-      console.log(error);
+    } catch (error) {
+      console.error("Upload Error:", error);
+      toast.error('Failed to upload images');
+    } finally {
       setUploading(false);
     }
-  }
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const form = {...state, userID: user._id}
-    for(let key in form) {
-      if(form[key] === '' || form[key].length === 0) {
+    const form = { ...state, userID: user._id };
+    console.log("Form data:", form);
+  
+    for (let key in form) {
+      const value = form[key];
+  
+      if (
+        value === undefined ||
+        value === null ||
+        (typeof value === 'string' && value.trim() === '') ||
+        (Array.isArray(value) && value.length === 0)
+      ) {
         toast.error('Please fill input field: ' + key);
         return;
       }
     }
-    toast.success("Congratulations! You're on the market!")
+  
+    toast.success("Congratulations! You're on the market!");
     mutation.mutate(form);
+  
     setTimeout(() => {
       navigate('/my-gigs');
     }, 2000);
-  }
+  };
 
   return (
     <div className='add'>

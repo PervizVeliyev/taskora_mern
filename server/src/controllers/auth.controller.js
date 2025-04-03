@@ -13,14 +13,28 @@ const authRegister = async (request, response) => {
 
     try {
         const hash = bcrypt.hashSync(password, saltRounds);
-        const { country } = satelize.satelize({ ip: ips[0] }, (error, payload) => payload);
-        
+
+        let country = null;
+        const satelizeResult = await new Promise((resolve, reject) => {
+            satelize.satelize({ ip: ips[0] }, (error, payload) => {
+                if (error) reject(error);
+                else resolve(payload);
+            });
+        });
+
+        if (satelizeResult) {
+            country = satelizeResult.country ? satelizeResult.country.en : 'Azerbaijan'; // Default to Azerbaijan
+        } else {
+            console.warn('Could not retrieve country information for IP:', ips[0]);
+            country = 'Azerbaijan'; // Default to Azerbaijan
+        }
+
         const user = new User({
             username,
             email,
             password: hash,
             image,
-            country: country.en,
+            country,
             description,
             isSeller,
             phone
@@ -32,8 +46,10 @@ const authRegister = async (request, response) => {
             message: 'New user created!'
         });
     }
-    catch({message}) {
-        if(message.includes('E11000')) {
+    catch (error) {
+        console.error('Error during user registration:', error.message);
+
+        if (error.message.includes('E11000')) {
             return response.status(400).send({
                 error: true,
                 message: 'Choose a unique username!'

@@ -37,7 +37,9 @@ const Register = () => {
 
     setLoading(true);
     try {
-      const { url } = await generateImageURL(image);
+      const url = await generateImageURL(image);
+      console.log(formInput);
+      console.log(url);
       const { data } = await axiosFetch.post('/auth/register', { ...formInput, image: url });
       toast.success('Registration successful!');
       setLoading(false);

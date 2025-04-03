@@ -1,13 +1,40 @@
 .pay {
     width: 600px;
-    height: 400px;
-    margin: auto;
+    min-height: 400px; // Changed from fixed height to min-height
+    margin: 50px auto; // Added top/bottom margin
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
 
     h2 {
         margin: 20px 0 40px 0;
+        text-align: center;
+    }
+
+    // Target the Stripe Link authentication header specifically
+    .StripeElement--LinkAuthentication {
+        margin-bottom: 20px; // Add space below the header
+    }
+
+    // Ensure the payment form container has proper spacing
+    .StripeElement {
+        margin-bottom: 20px;
+    }
+
+    // Style adjustments for the payment button container
+    .payment-btn-container {
+        position: relative;
+        z-index: 1;
+        margin-top: 30px;
     }
 
     @media screen and (max-width: 900px) {
         width: 90%;
+        min-height: 500px; // More space on mobile
+        margin: 30px auto;
+    }
+
+    @media screen and (max-width: 480px) {
+        min-height: 550px; // Even more space on small mobile
     }
 }
