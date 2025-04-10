@@ -17,10 +17,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(compression());
-app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:4173', 'https://fiverr-clone-zuhed.netlify.app', 'https://taskora.vercel.app'],
-    credentials: true
-}));
+const corsOptions = {
+    origin: [
+      'http://localhost:5173',
+      'http://localhost:4173',
+      'https://fiverr-clone-zuhed.netlify.app',
+      'https://taskora-mern.vercel.app'  // correct vercel link
+    ],
+    credentials: true,
+  };
+  
+app.use(cors(corsOptions));
+  
+  // This line is CRITICAL
+app.options('*', cors(corsOptions));
 
 // Other Routes
 app.use('/api/auth', authRoute);
