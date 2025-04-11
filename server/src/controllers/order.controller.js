@@ -23,7 +23,7 @@ const paymentIntent = async (request, response) => {
 
         const payment_intent = await stripe.paymentIntents.create({
             amount: gig.price * 100,
-            currency: "INR",
+            currency: "USD",
             automatic_payment_methods: {
                 enabled: true,
             },

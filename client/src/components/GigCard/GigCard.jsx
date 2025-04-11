@@ -29,7 +29,7 @@ const GigCard = (props) => {
               {data.price.toLocaleString('en-IN', {
                 maximumFractionDigits: 0,
                 style: 'currency',
-                currency: 'INR',
+                currency: 'USD',
               })}
             </h2>
           </div>
