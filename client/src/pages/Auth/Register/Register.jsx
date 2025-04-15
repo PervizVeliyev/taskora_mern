@@ -65,23 +65,23 @@ const Register = () => {
       <form onSubmit={handleSubmit}>
         <div className="left">
           <h1>Create a new account</h1>
-          <label htmlFor="">Username</label>
+          <label htmlFor="">Username <span style={{ color: '#757575' }}>*</span></label>
           <input
             name="username"
             type="text"
             placeholder="johndoe"
             onChange={handleChange}
           />
-          <label htmlFor="">Email</label>
+          <label htmlFor="">Email <span style={{ color: '#757575' }}>*</span></label>
           <input
             name="email"
             type="email"
             placeholder="email"
             onChange={handleChange}
           />
-          <label htmlFor="">Password</label>
+          <label htmlFor="">Password <span style={{ color: '#757575' }}>*</span></label>
           <input name="password" type="password" onChange={handleChange} />
-          <label htmlFor="">Profile Picture</label>
+          <label htmlFor="">Profile Picture <span style={{ color: '#757575' }}>*</span></label>
           <input type="file" onChange={(event) => setImage(event.target.files[0])} />
           <button type="submit" disabled={loading}>{loading ? 'Loading...' : 'Register'}</button>
         </div>
@@ -95,14 +95,14 @@ const Register = () => {
               <span className="slider round"></span>
             </label>
           </div>
-          <label htmlFor="">Phone Number</label>
+          <label htmlFor="">Phone Number <span style={{ color: '#757575' }}>*</span></label>
           <input
             name="phone"
             type="text"
             placeholder="+1 1234 567 890"
             onChange={handleChange}
           />
-          <label htmlFor="">Description</label>
+          <label htmlFor="">Description <span style={{ color: '#757575' }}>*</span></label>
           <textarea
             placeholder="A short description of yourself"
             name="description"

@@ -17,7 +17,7 @@ const Featured = () => {
       <div className="container">
 
         <div className="left">
-          <h1>Find the perfect <span>freelance</span> services for your business</h1>
+          <h1>Find the perfect <span>mate</span> to help you achieve your goals</h1>
           <div className="search">
             <div className="searchInput">
               <img src="./media/search.png" alt="search" />

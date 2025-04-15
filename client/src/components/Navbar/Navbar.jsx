@@ -109,8 +109,6 @@ const Navbar = () => {
 
         <div className="links">
           <div className="menu-links">
-            <span>Taskora Business</span>
-            <span>Explore</span>
             <span>English</span>
             {!user?.isSeller && <span>Become a Seller</span>}
           </div>
