@@ -24,32 +24,32 @@ const Home = () => {
       <div className="features">
         <div className="container">
           <div className="item">
-            <h1>A whole world of expert support at your fingertips</h1>
+            <h1>Dəstək ola biləcək ekspertlər bir ekran yaxınlığında</h1>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>The best for every budget</h6>
+              <h6>Hər büdcəyə uyğun</h6>
             </div>
-            <p>Find high-quality services at every price point.</p>
+            <p>Yüksək keyfiyyətli xidmətləri uyğun qiymət aralıqlarında tap.</p>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>Quality work done quickly</h6>
+              <h6>Sürətlə edilən keyfiyyətli iş</h6>
             </div>
-            <p>Find the right mentor to start supporting your project within minutes.</p>
+            <p>Sənə dəstək ola biləcək düzgün mentoru dəqiqələr içində tap.</p>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>Protected payments, every time</h6>
+              <h6>Təhlükəsiz ödənişlər, hər zaman</h6>
             </div>
-            <p>Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+            <p>Hər zaman nə qədər ödəyəcəyini əvvəlcədən bilmə imkanı. İşi təsdiqlədikdən sonra ödəniş edə bilmə imkanı.</p>
             <div className="title">
               <img src="./media/check.png" alt="check" />
-              <h6>24/7 support</h6>
+              <h6>24/7 dəstək</h6>
             </div>
-            <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
+            <p>Suallar yarandı? Bizim dəstək komandamız hər yerdə, hər zaman suallarınızı cavablamağa hazırdır.</p>
           </div>
           <div className="item">
             <img 
               src="https://cdn.pixabay.com/photo/2017/08/15/12/04/helping-each-other-2643652_1280.jpg" 
-              alt="Helping each other" 
+              alt="Bir-birinə yardım etmək" 
               style={{ width: '720px', height: '461px' }} 
             />
           </div>

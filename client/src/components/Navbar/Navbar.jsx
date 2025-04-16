@@ -48,13 +48,13 @@ const Navbar = () => {
   }, []);
 
   const menuLinks = [
-    { path: "/gigs?category=design", name: "Graphics & Design" },
-    { path: "/gigs?category=video", name: "Video & Animation" },
-    { path: "/gigs?category=books", name: "Writing & Translation" },
-    { path: "/gigs?category=ai", name: "AI Services" },
-    { path: "/gigs?category=social", name: "Digital Marketing" },
-    { path: "/gigs?category=voice", name: "Music & Audio" },
-    { path: "/gigs?category=wordpress", name: "Programming & Tech" },
+    { path: "/gigs?category=design", name: "Qrafik & Dizayn" },
+    { path: "/gigs?category=video", name: "Video & Animasiya" },
+    { path: "/gigs?category=books", name: "Yazı & Tərcümə" },
+    { path: "/gigs?category=ai", name: "Süni İntellekt" },
+    { path: "/gigs?category=social", name: "Rəqəmsal marketinq" },
+    { path: "/gigs?category=voice", name: "Musiqi & Səs" },
+    { path: "/gigs?category=wordpress", name: "Proqramlaşdırma & Texnologiya" },
   ];
 
   const settings = {
@@ -109,8 +109,7 @@ const Navbar = () => {
 
         <div className="links">
           <div className="menu-links">
-            <span>English</span>
-            {!user?.isSeller && <span>Become a Seller</span>}
+            {!user?.isSeller && <span>Satıcı ol</span>}
           </div>
           {isLoading ? (
             <Loader size={35} />
@@ -119,7 +118,7 @@ const Navbar = () => {
               {!user && (
                 <span>
                   <Link to="/login" className="link">
-                    Sign in
+                    Daxil ol
                   </Link>
                 </span>
               )}
@@ -128,7 +127,7 @@ const Navbar = () => {
                   className={showMenu || pathname !== "/" ? "join-active" : ""}
                 >
                   <Link to="/register" className="link">
-                    Join
+                    Qeydiyyat
                   </Link>
                 </button>
               )}
@@ -141,21 +140,21 @@ const Navbar = () => {
                       {user?.isSeller && (
                         <>
                           <Link className="link" to="/my-gigs">
-                            Gigs
+                            Xidmətlər
                           </Link>
                           <Link className="link" to="/organize">
-                            Add New Gig
+                            Yeni xidmət əlavə et
                           </Link>
                         </>
                       )}
                       <Link className="link" to="/orders">
-                        Orders
+                        Sifarişlər
                       </Link>
                       <Link className="link" to="/messages">
-                        Messages
+                        Mesajlar
                       </Link>
                       <Link className="link" to="/" onClick={handleLogout}>
-                        Logout
+                        Çıxış
                       </Link>
                     </div>
                   )}

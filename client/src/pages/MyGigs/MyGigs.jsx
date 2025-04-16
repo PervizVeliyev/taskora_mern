@@ -49,22 +49,22 @@ const MyGigs = () => {
         isLoading
           ? <div className='loader'> <Loader size={35} /> </div>
           : error
-            ? 'Something went wrong'
+            ? 'Xəta baş verdi'
             : <div className="container">
               <div className="title">
-                <h1>My Gigs</h1>
+                <h1>Mənim xidmətlərim</h1>
                 <Link to='/organize' className='link'>
-                  <button>Add New Gig</button>
+                  <button>Yeni xidmət əlavə et</button>
                 </Link>
               </div>
               <table>
                 <thead>
                   <tr>
-                    <th>Image</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Sales</th>
-                    <th>Action</th>
+                    <th>Şəkil</th>
+                    <th>Ad</th>
+                    <th>Qiymət</th>
+                    <th>Satış sayı</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>

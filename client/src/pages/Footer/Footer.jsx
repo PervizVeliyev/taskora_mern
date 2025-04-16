@@ -12,59 +12,54 @@ const Footer = () => {
       <div className="container">
         <div className="top">
           <div className="item">
-            <h1>Categories</h1>
-            <span>Graphic & Design</span>
-            <span>Digital Marketing</span>
-            <span>Writing & Translation</span>
-            <span>Video & Animation</span>
-            <span>Music & Audio</span>
-            <span>Programming & Tech</span>
-            <span>Data</span>
-            <span>Business</span>
-            <span>Lifestyle</span>
-            <span>Photography</span>
-            <span>Sitemap</span>
+            <h1>Kateqoriyalar</h1>
+            <span>Qrafika və Dizayn</span>
+            <span>Rəqəmsal Marketinq</span>
+            <span>Yazı və Tərcümə</span>
+            <span>Video və Animasiya</span>
+            <span>Musiqi və Səs</span>
+            <span>Proqramlaşdırma və Texnologiya</span>
+            <span>Databaza</span>
+            <span>Biznes</span>
+            <span>Həyat Tərzi</span>
+            <span>Fotoqrafiya</span>
+            <span>Xəritə</span>
           </div>
           <div className="item">
-            <h1>About</h1>
-            <span>Careers</span>
-            <span>Press & News</span>
-            <span>Partnership</span>
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <span>Intellectual Property Claims</span>
-            <span>Investor Relations</span>
+            <h1>Haqqında</h1>
+            <span>Karyera</span>
+            <span>Prez və Xəbərlər</span>
+            <span>Partnyorluq</span>
+            <span>Gizlilik Siyasəti</span>
+            <span>Xidmət Şərtləri</span>
+            <span>İntellektual Mülkiyyət Haqları</span>
+            <span>İnvestor Əlaqələri</span>
           </div>
           <div className="item">
-            <h1>Support</h1>
-            <span>Help & Support</span>
-            <span>Trust & Safety</span>
-            <span>Selling on Taskora</span>
-            <span>Buying on Taskora</span>
+            <h1>Dəstək</h1>
+            <span>Yardım və Dəstək</span>
+            <span>Etibar və Təhlükəsizlik</span>
+            <span>Taskora-da Satış</span>
+            <span>Taskora-da Alış</span>
           </div>
           <div className="item">
-            <h1>Community</h1>
-            <span>Events</span>
-            <span>Blog</span>
+            <h1>İcma</h1>
+            <span>Hadisələr</span>
+            <span>Bloq</span>
             <span>Forum</span>
-            <span>Community Standards</span>
-            <span>Podcast</span>
-            <span>Affiliats</span>
-            <span>Invite a Friend</span>
+            <span>İcma Standartları</span>
+            <span>Podkast</span>
+            <span>Dostu Dəvət Et</span>
           </div>
           <div className="item">
-            <h1>More From Taskora</h1>
-            <span>Taskora Business</span>
+            <h1>Taskora-dan Daha Çox</h1>
+            <span>Taskora Biznes</span>
             <span>Taskora Pro</span>
             <span>Taskora Studios</span>
-            <span>Taskora Logo Maker</span>
+            <span>Taskora Loqo Yaradıcı</span>
             <span>Taskora Guild</span>
-            <span>Get Inspired</span>
-            <span>Taskora Select</span>
-            <span>Clear Voice</span>
-            <span>Taskora Workspace</span>
-            <span>Learn</span>
-            <span>Working Not Working</span>
+            <span>İlham Alın</span>
+            <span>Öyrən</span>
           </div>
         </div>
         <hr />
@@ -83,15 +78,15 @@ const Footer = () => {
             </div>
             <div className="link">
               <img src="./media/language.png" alt="" />
-              <span>English</span>
+              <span>Azərbaycan</span>
             </div>
             <div className="link">
               <img src="./media/coin.png" alt="" />
-              <span>USD</span>
+              <span>AZN</span>
             </div>
             <div className="link">
               <img src="./media/accessibility.png" alt="" />
-              <span>USD</span>
+              <span>AZN</span>
             </div>
           </div>
         </div>

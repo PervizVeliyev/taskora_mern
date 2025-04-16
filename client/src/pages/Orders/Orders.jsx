@@ -57,20 +57,20 @@ const Orders = () => {
       {isLoading ? (
         <div className="loader"> <Loader /> </div>
       ) : error ? (
-        "Something went wrong!"
+        "Xəta baş verdi!"
       ) : (
         <div className="container">
           <div className="title">
-            <h1>Orders</h1>
+            <h1>Sifarişlər</h1>
           </div>
           <table>
             <thead>
               <tr>
-                <th>Image</th>
-                <th>{user.isSeller ? "Buyer" : "Seller"}</th>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Contact</th>
+                <th>Şəkil</th>
+                <th>{user.isSeller ? "Alıcı" : "Satıcı"}</th>
+                <th>Xidmət</th>
+                <th>Qiymət</th>
+                <th>Əlaqə</th>
               </tr>
             </thead>
             <tbody>

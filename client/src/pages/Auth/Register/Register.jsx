@@ -26,11 +26,11 @@ const Register = () => {
 
     for (let key in formInput) {
       if (formInput[key] === '') {
-        toast.error('Please fill all input field: ' + key);
+        toast.error('Zəhmət olmasa, məcburi xanaları daxil edin: ' + key);
         return;
       }
       else if (key === 'phone' && formInput[key].length < 9) {
-        toast.error('Enter valid phone number!');
+        toast.error('Düzgün mobil nömrə daxil edin, zəhmət olmasa!');
         return;
       }
     }
@@ -41,7 +41,7 @@ const Register = () => {
       console.log(formInput);
       console.log(url);
       const { data } = await axiosFetch.post('/auth/register', { ...formInput, image: url });
-      toast.success('Registration successful!');
+      toast.success('Qeydiyyat uğurla tamamlandı!');
       setLoading(false);
       navigate('/login');
     }
@@ -64,47 +64,47 @@ const Register = () => {
     <div className="register">
       <form onSubmit={handleSubmit}>
         <div className="left">
-          <h1>Create a new account</h1>
-          <label htmlFor="">Username <span style={{ color: '#757575' }}>*</span></label>
+          <h1>Yeni hesab yarat</h1>
+          <label htmlFor="">İstifadəçi adı <span style={{ color: '#757575' }}>*</span></label>
           <input
             name="username"
             type="text"
-            placeholder="johndoe"
+            placeholder="parvizvaliyev"
             onChange={handleChange}
           />
-          <label htmlFor="">Email <span style={{ color: '#757575' }}>*</span></label>
+          <label htmlFor="">Mail ünvanı <span style={{ color: '#757575' }}>*</span></label>
           <input
             name="email"
             type="email"
-            placeholder="email"
+            placeholder="test@gmail.com"
             onChange={handleChange}
           />
-          <label htmlFor="">Password <span style={{ color: '#757575' }}>*</span></label>
+          <label htmlFor="">Şifrə <span style={{ color: '#757575' }}>*</span></label>
           <input name="password" type="password" onChange={handleChange} />
-          <label htmlFor="">Profile Picture <span style={{ color: '#757575' }}>*</span></label>
+          <label htmlFor="">Profil şəkli <span style={{ color: '#757575' }}>*</span></label>
           <input type="file" onChange={(event) => setImage(event.target.files[0])} />
-          <button type="submit" disabled={loading}>{loading ? 'Loading...' : 'Register'}</button>
+          <button type="submit" disabled={loading}>{loading ? 'Yüklənir...' : 'Qeydiyyat'}</button>
         </div>
         <div className="right">
-          <p>Already have an account? <Link to='/login'>Signin</Link></p>
-          <h1>I want to become a seller</h1>
+          <p>Hesabın var? <Link to='/login'>Daxil ol</Link></p>
+          <h1>Satıcı olmaq istəyirəm</h1>
           <div className="toggle">
-            <label htmlFor="">Activate the seller account</label>
+            <label htmlFor="">Satıcı hesabını aktivləşdir</label>
             <label className="switch">
               <input type="checkbox" name='isSeller' onChange={handleChange} />
               <span className="slider round"></span>
             </label>
           </div>
-          <label htmlFor="">Phone Number <span style={{ color: '#757575' }}>*</span></label>
+          <label htmlFor="">Telefon nömrəsi <span style={{ color: '#757575' }}>*</span></label>
           <input
             name="phone"
             type="text"
             placeholder="+1 1234 567 890"
             onChange={handleChange}
           />
-          <label htmlFor="">Description <span style={{ color: '#757575' }}>*</span></label>
+          <label htmlFor="">Məlumat <span style={{ color: '#757575' }}>*</span></label>
           <textarea
-            placeholder="A short description of yourself"
+            placeholder="Özün haqqında qısa məlumat"
             name="description"
             id=""
             cols="30"

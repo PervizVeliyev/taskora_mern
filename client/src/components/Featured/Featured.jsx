@@ -17,20 +17,20 @@ const Featured = () => {
       <div className="container">
 
         <div className="left">
-          <h1>Find the perfect <span>mate</span> to help you achieve your goals</h1>
+          <h1>Səni məqsədlərinə çatdıracaq <span>ideal yoldaş</span> tap</h1>
           <div className="search">
             <div className="searchInput">
               <img src="./media/search.png" alt="search" />
-              <input type="search" placeholder='Try "website"' onChange={(({ target: { value } }) => setSearch(value))} />
+              <input type="search" placeholder='Yoxla "musiqi"' onChange={(({ target: { value } }) => setSearch(value))} />
             </div>
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch}>Axtar</button>
           </div>
           <div className="popular">
-            <span>Popular:</span>
-            <button>Website Design</button>
-            <button>WordPress</button>
-            <button>Logo Design</button>
-            <button>AI Services</button>
+            <span>Məşhur:</span>
+            <button>Proqramlaşdırma</button>
+            <button>Tərcümə</button>
+            <button>Qrafik Dizayn</button>
+            <button>Süni İntellekt</button>
           </div>
         </div>
 

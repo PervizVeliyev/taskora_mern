@@ -44,20 +44,20 @@ const Messages = () => {
     <div className='messages'>
       <div className="container">
         <div className="title">
-          <h1>Messages</h1>
+          <h1>Mesajlar</h1>
         </div>
         {
           isLoading
             ? <div className='loader'> <Loader /> </div>
             : error
-              ? 'Something went wrong!'
+              ? 'Xəta baş verdi!'
               : <table>
                 <thead>
                   <tr>
-                    <th>{user.isSeller ? 'Buyer' : 'Seller'}</th>
-                    <th>Last Message</th>
-                    <th>Date</th>
-                    <th>Action</th>
+                    <th>{user.isSeller ? 'Alıcı' : 'Satıcı'}</th>
+                    <th>Sonuncu mesaj</th>
+                    <th>Tarix</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -75,7 +75,7 @@ const Messages = () => {
                         <td>
                           {
                             ((user.isSeller && !conv.readBySeller) || (!user.isSeller && !conv.readByBuyer)) &&
-                            (<button onClick={() => handleMessageRead(conv.conversationID)}>Mark as read</button>)
+                            (<button onClick={() => handleMessageRead(conv.conversationID)}>"Görüldü" işarələ</button>)
                           }
                         </td>
                       </tr>

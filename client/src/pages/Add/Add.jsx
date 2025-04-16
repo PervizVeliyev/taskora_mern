@@ -56,7 +56,7 @@ const Add = () => {
 
   const handleImageUploads = async () => {
     if (!coverImage || gigImages.length === 0) {
-      toast.error('Please select images before uploading!');
+      toast.error('Zəhmət olmasa, yükləməmişdən əvvəl şəkilləri seçin!');
       return;
     }
   
@@ -75,11 +75,11 @@ const Add = () => {
         payload: { cover, images } // URLs correctly passed now
       });
   
-      toast.success('Images uploaded successfully!');
+      toast.success('Şəkillər yükləndi!');
       setDisabled(true);
     } catch (error) {
       console.error("Upload Error:", error);
-      toast.error('Failed to upload images');
+      toast.error('Yükləyərkən xəta baş verdi');
     } finally {
       setUploading(false);
     }
@@ -99,12 +99,12 @@ const Add = () => {
         (typeof value === 'string' && value.trim() === '') ||
         (Array.isArray(value) && value.length === 0)
       ) {
-        toast.error('Please fill input field: ' + key);
+        toast.error('Məcburi xanalari doldurun: ' + key);
         return;
       }
     }
   
-    toast.success("Congratulations! You're on the market!");
+    toast.success("Təbriklər! Siz xidmət bazarına daxil oldunuz!");
     mutation.mutate(form);
   
     setTimeout(() => {
@@ -115,15 +115,15 @@ const Add = () => {
   return (
     <div className='add'>
       <div className="container">
-        <h1>Add New Gig</h1>
+        <h1>Yeni xidmət əlavə et</h1>
         <div className="sections">
           <div className="left">
-            <label htmlFor="">Title</label>
-            <input name='title' type="text" placeholder="e.g. I will do something I'm really good at" onChange={handleFormCange} />
+            <label htmlFor="">Ad</label>
+            <input name='title' type="text" placeholder="e.g. Mən musiqi bəstələyə bilirəm" onChange={handleFormCange} />
 
             <label htmlFor="">Category</label>
             <select name="category" onChange={handleFormCange}>
-              <option value=''>Category</option>
+              <option value=''>Kateqoriya</option>
               {
                 cards.map((item) => (
                   <option key={item.id} value={item.slug}>{item.slug[0].toUpperCase() + item.slug.slice(1)}</option>
@@ -133,37 +133,37 @@ const Add = () => {
 
             <div className="images">
               <div className="imagesInputs">
-                <label htmlFor="">Cover Image</label>
+                <label htmlFor="">Örtük şəkli</label>
                 <input type="file" accept='image/*' onChange={(event) => setCoverImage(event.target.files[0])} />
                 <br />
-                <label htmlFor="">Upload Images</label>
+                <label htmlFor="">Şəkilləri yüklə</label>
                 <input type="file" accept='image/*' multiple onChange={(event) => setGigImages(event.target.files)} />
               </div>
-              <button disabled={!!disabled} onClick={handleImageUploads}>{uploading ? 'uploading' : disabled ? 'Uploaded' : 'upload'}</button>
+              <button disabled={!!disabled} onClick={handleImageUploads}>{uploading ? 'yüklənir' : disabled ? 'Yükləndi' : 'yüklə'}</button>
             </div>
 
-            <label htmlFor="">Description</label>
-            <textarea name='description' cols="30" rows="16" placeholder='Brief descriptions to introduce your service to customers' onChange={handleFormCange}></textarea>
-            <button onClick={handleFormSubmit}>Create</button>
+            <label htmlFor="">Məlumat</label>
+            <textarea name='description' cols="30" rows="16" placeholder='Müştəriyə satacağın xidmət haqqında məlumat' onChange={handleFormCange}></textarea>
+            <button onClick={handleFormSubmit}>Yarat</button>
           </div>
 
           <div className="right">
-            <label htmlFor="">Service Title</label>
-            <input type="text" name='shortTitle' placeholder='e.g. One-page web design' onChange={handleFormCange} />
+            <label htmlFor="">Xidmət adı</label>
+            <input type="text" name='shortTitle' placeholder='e.g. Bir sehifelik veb dizayn' onChange={handleFormCange} />
 
-            <label htmlFor="">Short Description</label>
-            <textarea name='shortDesc' cols="30" rows="10" placeholder='Short description of your service' onChange={handleFormCange}></textarea>
+            <label htmlFor="">Qısa məlumat</label>
+            <textarea name='shortDesc' cols="30" rows="10" placeholder='Xidmətinin qısa təsviri' onChange={handleFormCange}></textarea>
 
-            <label htmlFor="">Delivery Time (e.g. 3 days)</label>
+            <label htmlFor="">Təhvil müddəti (e.g. 3 gün)</label>
             <input type="number" name='deliveryTime' min='1' onChange={handleFormCange} />
 
-            <label htmlFor="">Revision Number</label>
+            <label htmlFor="">Reviziya nömrəsi</label>
             <input type="number" name='revisionNumber' min='1' onChange={handleFormCange} />
 
-            <label htmlFor="">Add Feature</label>
+            <label htmlFor="">Funksionallıq əlavə et</label>
             <form className='add' onSubmit={handleFormFeature}>
-              <input type="text" placeholder='e.g. page design' onChange={handleFormCange} />
-              <button type='submit'>Add</button>
+              <input type="text" placeholder='e.g. səhifə dizaynı' onChange={handleFormCange} />
+              <button type='submit'>Əlavə et</button>
             </form>
             <div className="addedFeatures">
               {
@@ -176,7 +176,7 @@ const Add = () => {
                 ))
               }
             </div>
-            <label htmlFor="">Price</label>
+            <label htmlFor="">Qiymət</label>
             <input name='price' type="number" min='1' onChange={handleFormCange} />
           </div>
         </div>

@@ -52,13 +52,13 @@ const Message = () => {
     <div className="message">
       <div className="container">
         <span className="breadcrumbs">
-          <Link to="/messages" className="link">Messages</Link>
+          <Link to="/messages" className="link">Mesajlar</Link>
         </span>
         {
           isLoading
             ? <div className="loader"> <Loader /> </div>
             : error
-              ? 'Something went wrong'
+              ? 'Xəta baş verdi'
               : <div className="messages">
                 {
                   data.map((message) => (
@@ -77,8 +77,8 @@ const Message = () => {
         }
         <hr />
         <form className="write" onSubmit={handleMessageSubmit}>
-          <textarea cols="30" rows="10" placeholder="Write a message"></textarea>
-          <button type='submit'>Send</button>
+          <textarea cols="30" rows="10" placeholder="Mesaj yaz"></textarea>
+          <button type='submit'>Göndər</button>
         </form>
       </div>
     </div>

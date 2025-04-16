@@ -35,7 +35,7 @@ const Login = () => {
 
     for(let key in formInput) {
       if(formInput[key] === '') {
-        toast.error('Please fill all input fields: ' + key);
+        toast.error('Zəhmət olmasa, bütün dəyərləri daxil edin: ' + key);
         return;
       }
     }
@@ -45,9 +45,8 @@ const Login = () => {
       const { data } = await axiosFetch.post('/auth/login', formInput);
       localStorage.setItem('user', JSON.stringify(data.user));
       setUser(data.user);
-      toast.success("Welcome back!", {
-        duration: 3000,
-        icon: "😃"
+      toast.success("Xoş gəldin!", {
+        duration: 3000
       });
       navigate('/');
     }
@@ -66,13 +65,13 @@ const Login = () => {
   return (
     <div className='login'>
       <form action="" onSubmit={handleFormSubmit}>
-        <h1>Sign in</h1>
-        <label htmlFor="">Username</label>
-        <input name='username' placeholder='johndoe' onChange={handleFormInput} />
+        <h1>Giriş</h1>
+        <label htmlFor="">İstifadəçi adı</label>
+        <input name='username' placeholder='parvizvaliyev' onChange={handleFormInput} />
 
-        <label htmlFor="">Password</label>
-        <input name='password' type='password' placeholder='password' onChange={handleFormInput} />
-        <button disabled={loading} type='submit'>{ loading ? 'Loading' : 'Login' }</button>
+        <label htmlFor="">Şifrə</label>
+        <input name='password' type='password' placeholder='12345' onChange={handleFormInput} />
+        <button disabled={loading} type='submit'>{ loading ? 'Yüklənir' : 'Daxil ol' }</button>
         <span>{error && error}</span>
       </form>
     </div>
