@@ -29,16 +29,16 @@ const CheckoutForm = () => {
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
-          setMessage("Payment succeeded!");
+          setMessage("Ödəniş uğurludur!");
           break;
         case "processing":
-          setMessage("Your payment is processing.");
+          setMessage("Ödəniş prosesdədir.");
           break;
         case "requires_payment_method":
-          setMessage("Your payment was not successful, please try again.");
+          setMessage("Ödəniş uğurlu deyil, yenidən cəhd edin.");
           break;
         default:
-          setMessage("Something went wrong.");
+          setMessage("Xəta baş verdi.");
           break;
       }
     });

@@ -6,8 +6,8 @@ const NotFound = () => {
       <div className='container'>
         <h1>404</h1>
         <div className='text'>
-          <h2>Page not found</h2>
-          <p>Sorry, we couldn’t found the page you’re looking for.</p>
+          <h2>Səhifə tapılmadı</h2>
+          <p>Üzr istəyirik, axtardığınız səhifəni tapa bilmədik.</p>
         </div>
       </div>
     </div>

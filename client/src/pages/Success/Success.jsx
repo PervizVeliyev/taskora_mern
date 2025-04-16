@@ -27,8 +27,7 @@ const Success = () => {
 
   return (
     <div className="pay-message">
-      Payment successful. You are being redirected to the orders page. Please do
-      not close the page
+      Ödəniş uğurla tamamlandı. Sifarişlər səhifəsinə yönləndirilirsiniz. Zəhmət olmasa səhifəni bağlamayın.
     </div>
   );
 };

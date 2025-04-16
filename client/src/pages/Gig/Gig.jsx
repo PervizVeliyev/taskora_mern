@@ -40,10 +40,10 @@ const Gig = () => {
         isLoading
           ? <div className='loader'> <Loader /> </div>
           : error
-            ? 'Something went wrong!'
+            ? 'Xəta baş verdi!'
             : <div className="container">
               <div className="left">
-                <span className="breadcrumbs">Liverr Graphics & Design</span>
+                <span className="breadcrumbs"></span>
                 <h1>{data?.title}</h1>
                 <div className="user">
                   <img
@@ -108,11 +108,11 @@ const Gig = () => {
                   <div className="details">
                     <div className="item">
                       <img src="/img/clock.png" alt="" />
-                      <span>{data.deliveryTime} days Delivery</span>
+                      <span>{data.deliveryTime} günə təslim</span>
                     </div>
                     <div className="item">
                       <img src="/img/recycle.png" alt="" />
-                      <span>{data.revisionNumber} Revisions</span>
+                      <span>{data.revisionNumber} Reviziyalar</span>
                     </div>
                   </div>
                   <div className="features">
@@ -126,17 +126,17 @@ const Gig = () => {
                     }
                   </div>
                   <Link to={`/pay/${_id}`}>
-                    <button>Continue</button>
+                    <button>Davam et</button>
                   </Link>
                 </div>
-                <h2>About This Gig</h2>
+                <h2>Bu xidmət haqqında</h2>
                 <p>
                   {
                     data.description
                   }
                 </p>
                 <div className="seller">
-                  <h2>About The Seller</h2>
+                  <h2>Satıcı haqqında</h2>
                   <div className="user">
                     <img
                       src={data?.userID?.image || '/media/noavatar.png'}
@@ -152,13 +152,13 @@ const Gig = () => {
                         <img src="/media/star.png" alt="" />
                         <span>5</span>
                       </div>
-                      <button>Contact Me</button>
+                      <button>Əlaqə saxla</button>
                     </div>
                   </div>
                   <div className="box">
                     <div className="items">
                       <div className="item">
-                        <span className="title">From</span>
+                        <span className="title">Ölkə</span>
                         <span className="desc">{data?.userID.country}
                           <span className='flag'>
                           <img src={country.normal} alt="" />
@@ -166,20 +166,20 @@ const Gig = () => {
                         </span>
                       </div>
                       <div className="item">
-                        <span className="title">Member since</span>
+                        <span className="title">İlk qeydiyyat tarixi</span>
                         <span className="desc">{MONTHS[new Date(data?.userID.createdAt).getMonth()] + ' ' + new Date(data?.userID.createdAt).getFullYear()}</span>
                       </div>
                       <div className="item">
-                        <span className="title">Avg. response time</span>
-                        <span className="desc">4 hours</span>
+                        <span className="title">Ortalama cavab vermək müddəti</span>
+                        <span className="desc">4 saat</span>
                       </div>
                       <div className="item">
-                        <span className="title">Last delivery</span>
+                        <span className="title">Ən gec təhvil vaxtı</span>
                         <span className="desc">1 day</span>
                       </div>
                       <div className="item">
-                        <span className="title">Languages</span>
-                        <span className="desc">English</span>
+                        <span className="title">Dillər</span>
+                        <span className="desc">İngilis dili</span>
                       </div>
                     </div>
                     <hr />
@@ -205,11 +205,11 @@ const Gig = () => {
                 <div className="details">
                   <div className="item">
                     <img src="/img/clock.png" alt="" />
-                    <span>{data.deliveryTime} days Delivery</span>
+                    <span>{data.deliveryTime} günə təslim</span>
                   </div>
                   <div className="item">
                     <img src="/img/recycle.png" alt="" />
-                    <span>{data.revisionNumber} Revisions</span>
+                    <span>{data.revisionNumber} Reviziyalar</span>
                   </div>
                 </div>
                 <div className="features">
@@ -223,7 +223,7 @@ const Gig = () => {
                   }
                 </div>
                 <Link to={`/pay/${_id}`}>
-                  <button>Continue</button>
+                  <button>Davam et</button>
                 </Link>
               </div>
             </div>

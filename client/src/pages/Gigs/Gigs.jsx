@@ -50,23 +50,23 @@ const Gigs = () => {
       <div className="container">
         <span className="breadcrumbs">TASKORA {category[0]?.toUpperCase() + category.slice(1)}</span>
         <h1>{category[0]?.toUpperCase() + category.slice(1)}</h1>
-        <p>Explore the boundaries of art and technology with Taskora's {category} artists</p>
+        <p> Taskora'da "{category}" kateqoriyası üzrə xidmətləri kəşf edin</p>
         <div className="menu">
           <div className="left">
-            <span>Budget</span>
+            <span>Büdcə</span>
             <input ref={minRef} type="number" placeholder='min' />
             <input ref={maxRef} type="number" placeholder='max' />
-            <button onClick={handlePriceFilter}>Apply</button>
+            <button onClick={handlePriceFilter}>Tətbiq et</button>
           </div>
           <div className="right">
-            <span className='sortBy'>Sort By</span>
-            <span className='sortType'>{sortBy === 'sales' ? 'Best Selling' : 'Newest'}</span>
+            <span className='sortBy'>Sırala</span>
+            <span className='sortType'>{sortBy === 'sales' ? 'Ən çox satılan' : 'Ən yeni'}</span>
             <img src="./media/down.png" alt="" onClick={() => setOpenMenu(!openMenu)} />
             {
               openMenu && (<div className="rightMenu">
                 {
-                  sortBy === 'sales' ? <span onClick={() => handleSortBy('createdAt')}>Newest</span>
-                    : <span onClick={() => handleSortBy('sales')}>Best Selling </span>
+                  sortBy === 'sales' ? <span onClick={() => handleSortBy('createdAt')}>Ən yeni</span>
+                    : <span onClick={() => handleSortBy('sales')}>Ən çox satılan </span>
                 }
               </div>)
             }

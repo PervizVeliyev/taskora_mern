@@ -36,7 +36,7 @@ const Pay = () => {
 
   return (
     <div className='pay'>
-      <h2>Pay Securely with Stripe</h2>
+      <h2>Stripe ilə təhlükəsiz ödə</h2>
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <CheckoutForm />

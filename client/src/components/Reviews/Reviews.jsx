@@ -54,17 +54,17 @@ const Reviews = (props) => {
 
     return (
         <div className="reviews">
-            <h2>Reviews</h2>
+            <h2>Dəyərləndirmələr</h2>
             {
                 isLoading
                     ? <div className='loader'><Loader size={35} /></div>
                     : error
-                        ? 'Something went wrong!'
+                        ? 'Xəta baş verdi!'
                         : data.map((review) => <Review key={review._id} review={review} />)
             }
             <div className="add">
                 <form className='addForm' onSubmit={handleReviewSubmit}>
-                    <textarea cols="20" rows="10" placeholder='Write a review'></textarea>
+                    <textarea cols="20" rows="10" placeholder='Dəyərləndirmə et'></textarea>
                     <select>
                         <option value={1}>1</option>
                         <option value={2}>2</option>
@@ -72,7 +72,7 @@ const Reviews = (props) => {
                         <option value={4}>4</option>
                         <option value={5}>5</option>
                     </select>
-                    <button>Send</button>
+                    <button>Göndər</button>
                 </form>
             </div>
         </div>

@@ -34,11 +34,11 @@ const Review = (props) => {
       </div>
       <p>{review.description}</p>
       <div className="helpful">
-        <span>Helpful?</span>
+        <span>Kömək etdi?</span>
         <img src="/media/like.png" alt="" />
-        <span>Yes</span>
+        <span>Bəli</span>
         <img src="/media/dislike.png" alt="" />
-        <span>No</span>
+        <span>Xeyr</span>
       </div>
     </div>
   )
