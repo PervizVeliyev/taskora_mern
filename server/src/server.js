@@ -9,23 +9,35 @@ const socketIo = require('socket.io');
 const { Message, Conversation } = require('./models');
 const PORT = 8080;
 
-const { userRoute, conversationRoute, gigRoute, messageRoute, orderRoute, reviewRoute, authRoute } = require('./routes');
+const {
+  userRoute,
+  conversationRoute,
+  gigRoute,
+  messageRoute,
+  orderRoute,
+  reviewRoute,
+  authRoute
+} = require('./routes');
 
 const app = express();
 const server = http.createServer(app);
 
+const corsOptions = {
+  origin: [
+    'https://taskora-mern.vercel.app',
+    'http://localhost:5173',
+    'http://localhost:4173',
+    'https://fiverr-clone-zuhed.netlify.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST']
+};
+
 const io = socketIo(server, {
-  cors: {
-    origin: [
-      'http://localhost:5173',
-      'http://localhost:4173',
-      'https://fiverr-clone-zuhed.netlify.app',
-      'https://taskora-mern.vercel.app'
-    ],
-    credentials: true,
-  },
+  cors: corsOptions
 });
 
+// WebSocket connection
 io.on('connection', (socket) => {
   console.log('🔌 User connected');
 
@@ -60,24 +72,15 @@ io.on('connection', (socket) => {
   });
 });
 
+// Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(compression());
-
-const corsOptions = {
-  origin: [
-    'http://localhost:5173',
-    'http://localhost:4173',
-    'https://fiverr-clone-zuhed.netlify.app',
-    'https://taskora-mern.vercel.app'
-  ],
-  credentials: true,
-};
-
 app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
 
+// API Routes
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/gigs', gigRoute);
@@ -86,6 +89,7 @@ app.use('/api/orders', orderRoute);
 app.use('/api/messages', messageRoute);
 app.use('/api/reviews', reviewRoute);
 
+// Test Routes
 app.get('/', (req, res) => {
   res.send('Hello, Topper!');
 });
@@ -96,6 +100,7 @@ app.get('/ip', (req, res) => {
   res.send({ ip: ips[0] });
 });
 
+// Start server
 server.listen(PORT, async () => {
   try {
     await connect();
