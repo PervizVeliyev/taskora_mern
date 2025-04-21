@@ -25,13 +25,14 @@ const server = http.createServer(app);
 const corsOptions = {
   origin: [
     'https://taskora-mern.vercel.app',
-    'http://localhost:5173',
-    'http://localhost:4173',
-    'https://fiverr-clone-zuhed.netlify.app'
+    'http://localhost:5173'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
 };
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 const io = socketIo(server, {
   cors: corsOptions
