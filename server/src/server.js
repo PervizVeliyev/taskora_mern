@@ -30,7 +30,7 @@ const corsOptions = {
     'https://fiverr-clone-zuhed.netlify.app'
   ],
   credentials: true,
-  methods: ['GET', 'POST']
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
 };
 
 const io = socketIo(server, {
