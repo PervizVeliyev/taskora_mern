@@ -23,10 +23,10 @@ const authRegister = async (request, response) => {
         });
 
         if (satelizeResult) {
-            country = satelizeResult.country ? satelizeResult.country.en : 'Azerbaijan'; // Default to Azerbaijan
+            country = satelizeResult.country ? satelizeResult.country.en : 'Azerbaijan';
         } else {
             console.warn('Could not retrieve country information for IP:', ips[0]);
-            country = 'Azerbaijan'; // Default to Azerbaijan
+            country = 'Azerbaijan';
         }
 
         const user = new User({
