@@ -15,7 +15,8 @@ const messageSchema = new mongoose.Schema({
         required: true,
     },
 }, {
-    versionKey: false
+    versionKey: false,
+    timestamps: true // Adds createdAt and updatedAt
 });
 
 module.exports = mongoose.model('Message', messageSchema);
